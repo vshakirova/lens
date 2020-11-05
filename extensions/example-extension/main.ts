@@ -1,8 +1,9 @@
 import { LensMainExtension } from "@k8slens/extensions";
 
 export default class ExampleExtensionMain extends LensMainExtension {
-  onActivate() {
+  async onActivate() {
     console.log('EXAMPLE EXTENSION MAIN: ACTIVATED', this.name, this.id);
+    console.log("EXAMPLE EXTENSION MAIN: has access to special folder", await this.getExtensionFileFolder())
   }
 
   onDeactivate() {

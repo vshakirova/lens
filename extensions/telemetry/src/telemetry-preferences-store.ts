@@ -1,7 +1,7 @@
 import { Store } from "@k8slens/extensions";
 import { toJS } from "mobx"
 
-export type TelemetryPreferencesModel = {
+export type TelemetryPreferencesModel = {
   enabled: boolean;
 }
 
@@ -21,6 +21,10 @@ export class TelemetryPreferencesStore extends Store.ExtensionStore<TelemetryPre
 
   set enabled(v: boolean) {
     this.data.enabled = v
+  }
+
+  protected fromStore(data: TelemetryPreferencesModel): void {
+    this.data = data
   }
 
   toJSON(): TelemetryPreferencesModel {

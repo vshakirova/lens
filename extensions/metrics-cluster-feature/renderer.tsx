@@ -10,10 +10,10 @@ export default class ClusterMetricsFeatureExtension extends LensRendererExtensio
         Description: () => {
           return (
             <span>
-                Enable timeseries data visualization (Prometheus stack) for your cluster.
-                Install this only if you don't have existing Prometheus stack installed.
-                You can see preview of manifests <a href="https://github.com/lensapp/lens/tree/master/extensions/lens-metrics/resources" target="_blank">here</a>.
-              </span>
+              Enable timeseries data visualization (Prometheus stack) for your cluster.
+              Install this only if you don't have existing Prometheus stack installed.
+              You can see preview of manifests <a href="https://github.com/lensapp/lens/tree/master/extensions/lens-metrics/resources" target="_blank">here</a>.
+            </span>
           )
         }
       },

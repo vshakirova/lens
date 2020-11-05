@@ -8,9 +8,8 @@ const AppPaths: Partial<Record<NodeJS.Platform, string>> = {
 
 export function setup(): Application {
   return new Application({
-    // path to electron app
+    path: AppPaths[process.platform], // path to electron app
     args: [],
-    path: AppPaths[process.platform],
     startTimeout: 30000,
     waitTimeout: 60000,
     env: {
@@ -19,9 +18,10 @@ export function setup(): Application {
   })
 }
 
+type AsyncPidGetter = () => Promise<number>;
+
 export async function tearDown(app: Application) {
-  let mpid: any = app.mainProcess.pid
-  let pid = await mpid()
+  const pid = await (app.mainProcess.pid as any as AsyncPidGetter)()
   await app.stop()
   try {
     process.kill(pid, "SIGKILL");
