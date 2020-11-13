@@ -1,17 +1,19 @@
 import { randomBytes } from "crypto"
 import { SHA256 } from "crypto-js"
 import { app } from "electron"
-import { ensureDir, mkdir, pathExists } from "fs-extra"
+import fse from "fs-extra"
 import { action, observable, toJS } from "mobx"
 import path from "path"
 import { BaseStore } from "../common/base-store"
+
+type LensExtensionId = string;
 
 interface FSProvisionModel {
   extensions: Record<string, string>; // extension names to paths
 }
 
 export class FilesystemProvisionerStore extends BaseStore<FSProvisionModel> {
-  @observable registeredExtensions = new Map<string, string>()
+  @observable registeredExtensions = observable.map<LensExtensionId, string>()
 
   private constructor() {
     super({
@@ -35,20 +37,18 @@ export class FilesystemProvisionerStore extends BaseStore<FSProvisionModel> {
     }
 
     const dirPath = this.registeredExtensions.get(extensionName)
-    await ensureDir(dirPath)
+    await fse.ensureDir(dirPath)
     return dirPath
   }
 
   @action
   protected fromStore({ extensions }: FSProvisionModel = { extensions: {} }): void {
-    for (const extension in extensions) {
-      this.registeredExtensions.set(extension, extensions[extension])
-    }
+    this.registeredExtensions.merge(extensions)
   }
 
   toJSON(): FSProvisionModel {
     return toJS({
-      extensions: Object.fromEntries(this.registeredExtensions.entries()),
+      extensions: this.registeredExtensions.toJSON(),
     }, {
       recurseEverything: true
     })

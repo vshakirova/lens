@@ -5,7 +5,7 @@ import "../common/prometheus-providers"
 import * as Mobx from "mobx"
 import * as LensExtensions from "../extensions/core-api";
 import { app, dialog } from "electron"
-import { appName, isTestEnv } from "../common/vars";
+import { appName, isDevelopment, isTestEnv } from "../common/vars";
 import path from "path"
 import { LensProxy } from "./lens-proxy"
 import { WindowManager } from "./window-manager";
@@ -26,7 +26,7 @@ import { extensionsStore } from "../extensions/extensions-store";
 import { filesystemProvisionerStore } from "./extension-filesystem";
 import packageInfo from "../../package.json"
 
-if (isTestEnv) {
+if (isDevelopment || isTestEnv) {
   packageInfo.lens.extensions.push("example-extension")
 }
 

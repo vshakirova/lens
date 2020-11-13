@@ -58,7 +58,7 @@ describe("Lens integration tests", () => {
 
     describe("preferences page", () => {
       it('shows "preferences"', async () => {
-        let appName: string = process.platform === "darwin" ? "Lens" : "File"
+        const appName: string = process.platform === "darwin" ? "Lens" : "File"
         await app.electron.ipcRenderer.send('test-menu-item-click', appName, "Preferences")
         await app.client.waitUntilTextExists("h2", "Preferences")
       })
@@ -78,7 +78,7 @@ describe("Lens integration tests", () => {
     it.skip("should register all in tree extensions", async () => {
       // TODO: skipping since it doesn't seem like "index.ts" is being run.
 
-      await when(() => extensionLoader.isLoaded)
+      await extensionLoader.whenLoaded
       const extensions: LensExtension[] = Array.from((extensionLoader as any).instances.values())
       const extensionNames = new Set(extensions.map(e => e.manifest.name))
 
