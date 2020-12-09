@@ -918,14 +918,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.6":
-  version "7.10.2"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.2.tgz#d103f21f2602497d38348a32e008637d506db839"
-  integrity sha512-6sF3uQw2ivImfVIl62RZ7MXhO2tap69WeWK57vAaimT6AZbE4FbqjdEJIN1UqoD6wI6B+1n9UiagafH1sxjOtg==
-  dependencies:
-    regenerator-runtime "^0.13.4"
-
-"@babel/runtime@^7.10.2", "@babel/runtime@^7.10.3", "@babel/runtime@^7.11.2", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.3", "@babel/runtime@^7.11.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2", "@babel/runtime@^7.9.6":
   version "7.12.1"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.1.tgz#b4116a6b6711d010b2dad3b7b6e43bf1b9954740"
   integrity sha512-J5AIf3vPj3UwXaAzb5j1xM4WAQDX3EMgemF8rjCP3SoW09LfRKAXQKt6CoVYl230P6iWdRcBbnLDDdnqWxZSCA==
@@ -1527,13 +1520,13 @@
     cosmiconfig "^6.0.0"
     jest-validate "^26.0.1"
 
-"@lingui/core@3.0.0-13":
-  version "3.0.0-13"
-  resolved "https://registry.yarnpkg.com/@lingui/core/-/core-3.0.0-13.tgz#50d1d8489ceb9d0fe87ae0fee97b805db258296d"
-  integrity sha512-sC63qOfsOIijCL1sYj3eMRGUjbfH/6/UCQdziC1p3bv5MYYgw96RYrJ7Xkf6EFXxP+6f6BwpyxFrL49bcvo6sw==
+"@lingui/core@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@lingui/core/-/core-3.3.0.tgz#2d8f87a4a00123410c66c234f7ba6a22afddb494"
+  integrity sha512-qPCHA2b/XT7ptTgpmnfQzQgAKPKHIcIGDfp4rppa0h+c1gmvI+uQKU8DEKmU0GplcykEfL7VZ8asdIXe0WrH6Q==
   dependencies:
-    "@babel/runtime" "^7.9.6"
-    make-plural "^6.2.1"
+    "@babel/runtime" "^7.11.2"
+    make-plural "^6.2.2"
     messageformat-parser "^4.1.3"
 
 "@lingui/loader@^3.0.0-13":
@@ -1556,13 +1549,13 @@
     "@lingui/conf" "3.0.0-13"
     ramda "^0.27.0"
 
-"@lingui/react@^3.0.0-13":
-  version "3.0.0-13"
-  resolved "https://registry.yarnpkg.com/@lingui/react/-/react-3.0.0-13.tgz#e3b45ff7d77a02a187ef553569b1b25dba61ad21"
-  integrity sha512-cProb6EZYqgHn85he1bWqCcBGE4pW91TOg2j0JQAn24ozwhQDSgOsVd8ZuU5vTB/S+8hfI16ATwxWOr6fhHTeA==
+"@lingui/react@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@lingui/react/-/react-3.3.0.tgz#2faa44d87cba1447c9367208ee24ce241e2febe2"
+  integrity sha512-7T7SFVZR09qKFajBZZamJ+K9pOm2bc7IGKb/ery0le/dSDrZnG4Zi7zeRyM2rlC51FU+Nda7LXODvqE/NkKLkw==
   dependencies:
-    "@babel/runtime" "^7.9.6"
-    "@lingui/core" "3.0.0-13"
+    "@babel/runtime" "^7.11.2"
+    "@lingui/core" "^3.3.0"
 
 "@material-ui/core@^4.10.1":
   version "4.10.1"
@@ -9722,6 +9715,11 @@ make-plural@^6.2.1:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/make-plural/-/make-plural-6.2.1.tgz#2790af1d05fb2fc35a111ce759ffdb0aca1339a3"
   integrity sha512-AmkruwJ9EjvyTv6AM8MBMK3TAeOJvhgTv5YQXzF0EP2qawhpvMjDpHvsdOIIT0Vn+BB0+IogmYZ1z+Ulm/m0Fg==
+
+make-plural@^6.2.2:
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/make-plural/-/make-plural-6.2.2.tgz#beb5fd751355e72660eeb2218bb98eec92853c6c"
+  integrity sha512-8iTuFioatnTTmb/YJjywkVIHLjcwkFD9Ms0JpxjEm9Mo8eQYkh1z+55dwv4yc1jQ8ftVBxWQbihvZL1DfzGGWA==
 
 makeerror@1.0.x:
   version "1.0.11"
